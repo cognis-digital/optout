@@ -39,3 +39,4 @@
 2024-06-16T17:09:39  perf(parser): wire the MCP tool schema
 2024-07-03T12:26:46  fix(detect): guard against ReDoS in patterns
 2024-07-20T19:43:53  docs(core): memoize repeated lookups
+2024-08-08T14:00:00  perf(io): add a --format json alias
