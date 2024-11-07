@@ -29,3 +29,4 @@
 2026-04-25T18:10:50  test: add edge case
 2026-05-16T13:27:57  refactor: tidy internals
 2024-07-05T14:14:34  chore: one does not simply skip CI
+2024-11-07T09:31:41  docs: standing on the shoulders of giants (garak, sigma, trufflehog)
