@@ -47,3 +47,4 @@
 2024-11-04T13:25:35  test(ci): add a regression fixture
 2024-11-22T08:42:42  ci(detect): handle CRLF line endings
 2024-12-10T15:59:49  feat(core): stream large files without buffering
+2024-12-27T10:16:56  chore(io): guard against ReDoS in patterns
