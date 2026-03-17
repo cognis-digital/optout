@@ -71,3 +71,4 @@
 2026-01-22T13:13:23  refactor(report): clarify the README quickstart
 2026-02-09T08:30:30  test(deps): bump the dev toolchain
 2026-02-27T15:47:37  ci(format): support stdin as a source
+2026-03-17T10:04:44  docs(config): lower memory on big inputs
