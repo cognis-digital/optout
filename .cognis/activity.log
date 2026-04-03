@@ -72,3 +72,4 @@
 2026-02-09T08:30:30  test(deps): bump the dev toolchain
 2026-02-27T15:47:37  ci(format): support stdin as a source
 2026-03-17T10:04:44  docs(config): lower memory on big inputs
+2026-04-03T17:21:51  perf(mcp): dedupe overlapping findings
