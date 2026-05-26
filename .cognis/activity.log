@@ -75,3 +75,4 @@
 2026-04-03T17:21:51  perf(mcp): dedupe overlapping findings
 2026-04-21T12:38:58  ci(cache): document the config keys
 2026-05-09T19:55:05  feat(parser): extract the scorer
+2026-05-26T14:12:12  chore(config): normalize unicode before matching
