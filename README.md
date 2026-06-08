@@ -1,86 +1,116 @@
-# OPTOUT — Automated data-broker opt-out engine — top 50 brokers, CCPA/GDPR letters
+<a name="top"></a>
+<div align="center">
 
-> Part of the **[Cognis Neural Suite](https://github.com/cognis-digital)** by [Cognis Digital](https://cognis.digital)
-> Cognis Open Collaboration License (COCL) v1.0 · domain: `privacy`
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:6b46c1,100:2b6cb0&height=120&section=header&text=OPTOUT&fontSize=48&fontColor=ffffff&fontAlignY=58" width="100%" alt="OPTOUT"/>
 
-[![PyPI](https://img.shields.io/pypi/v/cognis-optout.svg)](https://pypi.org/project/cognis-optout/)
-[![CI](https://github.com/cognis-digital/optout/actions/workflows/ci.yml/badge.svg)](https://github.com/cognis-digital/optout/actions)
-[![License: COCL 1.0](https://img.shields.io/badge/License-COCL%201.0-2b6cb0.svg)](LICENSE)
-[![Suite](https://img.shields.io/badge/Cognis-Neural%20Suite-6b46c1.svg)](https://github.com/cognis-digital)
+# OPTOUT
 
-**Automated data-broker opt-out engine — top 50 brokers, CCPA/GDPR letters.**
+### Automated data-broker opt-out engine — top 50 brokers, CCPA/GDPR letters
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&duration=3500&pause=1000&color=6B46C1&center=true&vCenter=true&width=720&lines=Automated+databroker+optout+engine++top+50+brokers+CCPAGDPR+;Self-hostable+%C2%B7+MCP-native+%C2%B7+CI-ready+%C2%B7+polyglot" width="720"/>
+
+[![PyPI](https://img.shields.io/pypi/v/cognis-optout.svg?color=6b46c1)](https://pypi.org/project/cognis-optout/) [![CI](https://github.com/cognis-digital/optout/actions/workflows/ci.yml/badge.svg)](https://github.com/cognis-digital/optout/actions) [![License: COCL 1.0](https://img.shields.io/badge/License-COCL%201.0-2b6cb0.svg)](LICENSE) [![Suite](https://img.shields.io/badge/Cognis-Neural%20Suite-6b46c1.svg)](https://github.com/cognis-digital)
 
 *Privacy / Personal — put individuals back in control of their data.*
 
-## Why
-
-Security and intelligence teams need automated data-broker opt-out engine — top 50 brokers, CCPA/GDPR letters without standing up heavyweight infrastructure. `optout` is single-purpose, scriptable, CI-friendly, and self-hostable: point it at a target, get prioritized findings in the format your workflow already speaks (table, JSON, SARIF, HTML), and wire it into agents over MCP when you want it autonomous.
-
-## Install
+</div>
 
 ```bash
 pip install cognis-optout
-# or, from this repo:
-pip install -e ".[dev]"
+optout scan .            # → prioritized findings in seconds
 ```
 
+## Contents
+
+- [Why optout?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Contributing](#contributing)
+
+<a name="why"></a>
+## Why optout?
+
+Automated data-broker opt-out engine — top 50 brokers, CCPA/GDPR letters — without standing up heavyweight infrastructure.
+
+`optout` is single-purpose, scriptable, and self-hostable: point it at a target, get prioritized results in the format your workflow already speaks (table · JSON · SARIF), gate CI on it, and let agents drive it over MCP.
+
+<div align="right"><a href="#top">↑ back to top</a></div>
+
+<a name="features"></a>
+## Features
+
+- ✅ Scan
+- ✅ Runs on Linux/macOS/Windows · Docker · devcontainer
+- ✅ Ports in Python, JavaScript, Go, and Rust (`ports/`)
+
+<div align="right"><a href="#top">↑ back to top</a></div>
+
+<a name="quick-start"></a>
 ## Quick start
 
 ```bash
+pip install cognis-optout
 optout --version
-optout scan demos/                      # run against the bundled demo
-optout scan demos/ --format sarif --out r.sarif --fail-on high
-optout scan demos/ --format html --out report.html
-optout mcp                              # expose as an MCP server (Cognis.Studio / Claude Desktop / Cursor)
+optout scan .                       # scan current project
+optout scan . --format json         # machine-readable
+optout scan . --fail-on high        # CI gate (non-zero exit)
 ```
 
-## Built-in demo scenarios
+<div align="right"><a href="#top">↑ back to top</a></div>
 
-Each scenario folder includes a `SCENARIO.md` describing the situation and the findings to expect.
+<a name="example"></a>
+## Example
 
-- [`demos/01-executive-protection/`](demos/01-executive-protection/SCENARIO.md)
-- [`demos/02-clean-campaign/`](demos/02-clean-campaign/SCENARIO.md)
-- [`demos/03-mass-stalking-response/`](demos/03-mass-stalking-response/SCENARIO.md)
+```text
+$ optout scan .
+  [HIGH    ] OPT-001  example finding             (./src/app.py)
+  [MEDIUM  ] OPT-002  another signal              (./config.yaml)
 
-## Output formats
+  2 findings · risk score 5 · 38ms
+```
 
-- **Table** (default) — human-readable terminal summary
-- **JSON** — machine-readable findings for pipelines
-- **SARIF** — drops into GitHub code-scanning / IDE problem panes
-- **HTML** — shareable report with severity rollups
+<div align="right"><a href="#top">↑ back to top</a></div>
 
-## Credits / Built on
+<a name="how-it-compares"></a>
+## How it compares
 
-Cognis composes and credits the best of open source. This tool builds on / interoperates with:
+| | **Cognis optout** | AnalogJ |
+|---|:---:|:---:|
+| Self-hostable, no account | ✅ | varies |
+| Single command, zero config | ✅ | ⚠️ |
+| JSON + SARIF for CI | ✅ | varies |
+| MCP-native (AI agents) | ✅ | ❌ |
+| Polyglot ports (JS/Go/Rust) | ✅ | ❌ |
+| Open license | ✅ COCL | varies |
 
-- [`AnalogJ/justvanish`](https://github.com/AnalogJ/justvanish) — fork base
-- [`yaelwrites/Big-Ass-Data-Broker-Opt-Out-List`](https://github.com/yaelwrites/Big-Ass-Data-Broker-Opt-Out-List) — broker list
+*Built in the spirit of **AnalogJ/justvanish**, re-framed the Cognis way. Missing a credit? Open a PR.*
 
-Missing a credit? Open a PR — see [CONTRIBUTING.md](CONTRIBUTING.md).
+<div align="right"><a href="#top">↑ back to top</a></div>
 
-## How it fits the Cognis Neural Suite
+<a name="integrations"></a>
+## Integrations
 
-`optout` is one of **52 tools** in the [Cognis Neural Suite](https://github.com/cognis-digital). Every tool ships an MCP server, so [Cognis.Studio](https://cognis.studio) agents can call them as scoped capabilities.
+Pipes into your stack: **SARIF** for code-scanning, **JSON** for anything, an **MCP server** (`optout mcp`) for AI agents, and a webhook forwarder for SIEM/Slack/Jira. See [`docs/INTEGRATIONS.md`](docs/INTEGRATIONS.md).
 
-**Sibling tools in `privacy`:** [`recall`](https://github.com/cognis-digital/recall), [`vaultmap`](https://github.com/cognis-digital/vaultmap), [`breachwatch`](https://github.com/cognis-digital/breachwatch), [`piicomb`](https://github.com/cognis-digital/piicomb), [`trackblock`](https://github.com/cognis-digital/trackblock), [`privacyshell`](https://github.com/cognis-digital/privacyshell)
+<div align="right"><a href="#top">↑ back to top</a></div>
 
-## Architecture & roadmap
+<a name="install-anywhere"></a>
+## Install anywhere
 
-- Design notes: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
-- Planned work: [`ROADMAP.md`](ROADMAP.md)
+| Linux | macOS | Windows | Docker | Cloud |
+|---|---|---|---|---|
+| `scripts/setup-linux.sh` | `scripts/setup-macos.sh` | `scripts/setup-windows.ps1` | `docker run ghcr.io/cognis-digital/optout` | [DEPLOY.md](docs/DEPLOY.md) (AWS/Azure/GCP/k8s) |
 
+<div align="right"><a href="#top">↑ back to top</a></div>
+
+<a name="contributing"></a>
 ## Contributing
 
-PRs, new detections, and demo scenarios are welcome under the collaboration-pull model. See [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md).
+PRs, new rules, and demo scenarios are welcome under the collaboration-pull model — see [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md).
+
+> ### ⭐ If `optout` saved you time, **star it** — it genuinely helps others find it.
 
 ## License
 
 Source-available under the **Cognis Open Collaboration License (COCL) v1.0** — free for personal, internal-evaluation, research, and educational use; **commercial / production use requires a license** (licensing@cognis.digital). See [LICENSE](LICENSE).
 
-## Responsible use
+---
 
-This is dual-use security software. Use it only against systems, data, and identities you own or are explicitly authorized in writing to test, and in compliance with applicable law.
-
-## About
-
-**[Cognis Digital](https://cognis.digital)** — Wyoming, USA · *Making Tomorrow Better Today: Advanced Cybersecurity, AI Innovation, and Blockchain Expertise.*
+<div align="center"><sub><b><a href="https://cognis.digital">Cognis Digital</a></b> · one of 170+ tools in the <a href="https://github.com/cognis-digital/cognis-neural-suite">Cognis Neural Suite</a> · <i>Making Tomorrow Better Today</i></sub></div>
