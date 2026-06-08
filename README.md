@@ -122,7 +122,17 @@ Pipes into your stack: **SARIF** for code-scanning, **JSON** for anything, an **
 <div align="right"><a href="#top">↑ back to top</a></div>
 
 <a name="install-anywhere"></a>
-## Install anywhere
+## Install — every way, every platform
+
+```bash
+pip install "git+https://github.com/cognis-digital/optout.git"    # pip (works today)
+pipx install "git+https://github.com/cognis-digital/optout.git"   # isolated CLI
+uv tool install "git+https://github.com/cognis-digital/optout.git" # uv
+pip install cognis-optout                                          # PyPI (when published)
+docker run --rm ghcr.io/cognis-digital/optout:latest --help        # Docker
+brew install cognis-digital/tap/optout                             # Homebrew tap
+curl -fsSL https://raw.githubusercontent.com/cognis-digital/optout/main/install.sh | sh
+```
 
 | Linux | macOS | Windows | Docker | Cloud |
 |---|---|---|---|---|
