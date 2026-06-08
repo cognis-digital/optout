@@ -1,11 +1,28 @@
-"""
-OPTOUT — Automated data-broker opt-out engine — 50 brokers, CCPA/GDPR letters
-Part of the Cognis Neural Suite by Cognis Digital.
-https://cognis.digital · MIT License
-"""
-from optout.core import scan, TOOL_NAME, TOOL_VERSION
+"""OPTOUT — automated data-broker opt-out engine.
 
-__version__ = TOOL_VERSION
-__author__ = "Cognis Digital"
-__license__ = "MIT"
-__all__ = ["scan", "TOOL_NAME", "TOOL_VERSION", "__version__"]
+Generates CCPA / GDPR opt-out (data deletion) requests for the top
+data brokers, tracks request status, and renders ready-to-send letters.
+Standard library only, zero install, no network required.
+"""
+from .core import (
+    Broker,
+    OptOutRequest,
+    OptOutEngine,
+    BROKERS,
+    load_profile,
+    render_letter,
+)
+
+TOOL_NAME = "optout"
+TOOL_VERSION = "1.0.0"
+
+__all__ = [
+    "Broker",
+    "OptOutRequest",
+    "OptOutEngine",
+    "BROKERS",
+    "load_profile",
+    "render_letter",
+    "TOOL_NAME",
+    "TOOL_VERSION",
+]

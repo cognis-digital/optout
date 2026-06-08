@@ -1,0 +1,10 @@
+{
+  "full_name": "Jordan A. Rivera",
+  "email": "jordan.rivera@example.com",
+  "address": "742 Evergreen Terrace, Springfield, CA 90210",
+  "phone": "+1-310-555-0188",
+  "prior_addresses": [
+    "18 Maple Court, Portland, OR 97201",
+    "55 Birch Ave, Austin, TX 78701"
+  ]
+}
