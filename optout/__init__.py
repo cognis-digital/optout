@@ -1,28 +1,11 @@
-"""OPTOUT — automated data-broker opt-out engine.
-
-Generates CCPA / GDPR opt-out (data deletion) requests for the top
-data brokers, tracks request status, and renders ready-to-send letters.
-Standard library only, zero install, no network required.
-"""
-from .core import (
-    Broker,
-    OptOutRequest,
-    OptOutEngine,
-    BROKERS,
-    load_profile,
-    render_letter,
-)
-
-TOOL_NAME = "optout"
-TOOL_VERSION = "1.0.0"
-
-__all__ = [
-    "Broker",
-    "OptOutRequest",
-    "OptOutEngine",
-    "BROKERS",
-    "load_profile",
-    "render_letter",
-    "TOOL_NAME",
-    "TOOL_VERSION",
-]
+"""optout — part of the Cognis Neural Suite."""
+try:  # re-export the tool's public API + identity from core
+    from optout.core import *  # noqa: F401,F403
+except Exception:  # pragma: no cover
+    pass
+try:
+    from optout.core import TOOL_NAME, TOOL_VERSION
+except Exception:  # pragma: no cover
+    TOOL_NAME = "optout"
+    TOOL_VERSION = "0.1.0"
+__version__ = TOOL_VERSION
