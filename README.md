@@ -36,7 +36,9 @@ Automated data-broker opt-out engine — top 50 brokers, CCPA/GDPR letters — w
 <a name="features"></a>
 ## Features
 
-- ✅ Scan
+- ✅ Get Broker
+- ✅ Load Profile
+- ✅ Render Letter
 - ✅ Runs on Linux/macOS/Windows · Docker · devcontainer
 - ✅ Ports in Python, JavaScript, Go, and Rust (`ports/`)
 
