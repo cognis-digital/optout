@@ -1,0 +1,10 @@
+{
+  "name": "@cognis/optout",
+  "version": "0.2.0",
+  "description": "JavaScript port of optout (Cognis Neural Suite)",
+  "bin": {
+    "optout": "index.js"
+  },
+  "license": "LicenseRef-COCL-1.0",
+  "type": "module"
+}
