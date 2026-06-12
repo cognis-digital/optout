@@ -16,7 +16,7 @@
 </div>
 
 ```bash
-pip install cognis-optout
+pip install "git+https://github.com/cognis-digital/optout.git"
 optout scan .            # → prioritized findings in seconds
 ```
 
@@ -48,7 +48,7 @@ Automated data-broker opt-out engine — top 50 brokers, CCPA/GDPR letters — w
 ## Quick start
 
 ```bash
-pip install cognis-optout
+pip install "git+https://github.com/cognis-digital/optout.git"
 optout --version
 optout scan .                       # scan current project
 optout scan . --format json         # machine-readable
