@@ -20,6 +20,12 @@ pip install "git+https://github.com/cognis-digital/optout.git"
 optout scan .            # → prioritized findings in seconds
 ```
 
+<!-- cognis:layman:start -->
+## What is this?
+
+Your personal information is held by dozens of data brokers — companies that collect and sell your name, address, phone number, and more without your knowledge. `optout` lets you send legally backed removal requests to over 20 of the biggest brokers at once, using your rights under California's CCPA law or the European GDPR. You fill in a simple profile with your name and email, run one command, and get ready-to-send letters for every broker. It runs entirely on your own computer with no account required and no data sent anywhere.
+<!-- cognis:layman:end -->
+
 ## Contents
 
 - [Why optout?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [Architecture](#architecture) · [AI stack](#ai-stack) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Related](#related) · [Contributing](#contributing)
@@ -45,6 +51,42 @@ Automated data-broker opt-out engine — top 50 brokers, CCPA/GDPR letters — w
 <div align="right"><a href="#top">↑ back to top</a></div>
 
 <a name="quick-start"></a>
+<!-- cognis:install:start -->
+## Install
+
+`optout` is source-available (not published to PyPI) — every method below installs
+straight from GitHub. Pick whichever you prefer; the one-line scripts auto-detect
+the best tool available on your machine.
+
+**One-liner (Linux / macOS):**
+```sh
+curl -fsSL https://raw.githubusercontent.com/cognis-digital/optout/HEAD/install.sh | sh
+```
+
+**One-liner (Windows PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/cognis-digital/optout/HEAD/install.ps1 | iex
+```
+
+**Or install manually — any one of:**
+```sh
+pipx install "git+https://github.com/cognis-digital/optout.git"     # isolated (recommended)
+uv tool install "git+https://github.com/cognis-digital/optout.git"  # uv
+pip install "git+https://github.com/cognis-digital/optout.git"      # pip
+```
+
+**From source:**
+```sh
+git clone https://github.com/cognis-digital/optout.git
+cd optout && pip install .
+```
+
+Then run:
+```sh
+optout --help
+```
+<!-- cognis:install:end -->
+
 ## Quick start
 
 ```bash
