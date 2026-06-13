@@ -20,6 +20,32 @@ pip install cognis-optout
 optout scan .            # → prioritized findings in seconds
 ```
 
+## Usage — step by step
+
+`optout` is an automated data-broker opt-out engine: it builds CCPA/GDPR removal requests from a consumer profile and renders send-ready letters.
+
+1. **Install**:
+   ```bash
+   pip install -e .
+   optout --version
+   ```
+2. **List known data brokers** (optionally filtered by regime):
+   ```bash
+   optout brokers --regime CCPA
+   ```
+3. **Build an opt-out plan** from a consumer profile JSON:
+   ```bash
+   optout plan profile.json --regime CCPA
+   ```
+4. **Render a send-ready letter** for one broker by slug:
+   ```bash
+   optout letter acxiom profile.json --regime CCPA
+   ```
+5. **Automate** — emit the plan as JSON, or restrict to specific brokers with `--only`:
+   ```bash
+   optout --format json plan profile.json --only acxiom spokeo > plan.json
+   ```
+
 ## Contents
 
 - [Why optout?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [Architecture](#architecture) · [AI stack](#ai-stack) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Related](#related) · [Contributing](#contributing)
