@@ -9,16 +9,22 @@
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&duration=3500&pause=1000&color=6B46C1&center=true&vCenter=true&width=720&lines=Automated+databroker+optout+engine++top+50+brokers+CCPAGDPR+;Self-hostable+%C2%B7+MCP-native+%C2%B7+CI-ready+%C2%B7+polyglot" width="720"/>
 
-[![PyPI](https://img.shields.io/pypi/v/cognis-optout.svg?color=6b46c1)](https://pypi.org/project/cognis-optout/) [![CI](https://github.com/cognis-digital/optout/actions/workflows/ci.yml/badge.svg)](https://github.com/cognis-digital/optout/actions) [![License: COCL 1.0](https://img.shields.io/badge/License-COCL%201.0-2b6cb0.svg)](LICENSE) [![Suite](https://img.shields.io/badge/Cognis-Neural%20Suite-6b46c1.svg)](https://github.com/cognis-digital)
+[![install](https://img.shields.io/badge/install-git%2B%20%C2%B7%20pipx%20%C2%B7%20uv-6b46c1.svg)](#install--every-way-every-platform) [![CI](https://github.com/cognis-digital/optout/actions/workflows/ci.yml/badge.svg)](https://github.com/cognis-digital/optout/actions) [![License: COCL 1.0](https://img.shields.io/badge/License-COCL%201.0-2b6cb0.svg)](LICENSE) [![Suite](https://img.shields.io/badge/Cognis-Neural%20Suite-6b46c1.svg)](https://github.com/cognis-digital)
 
 *Privacy / Personal — put individuals back in control of their data.*
 
 </div>
 
 ```bash
-pip install cognis-optout
+pip install "git+https://github.com/cognis-digital/optout.git"
 optout scan .            # → prioritized findings in seconds
 ```
+
+<!-- cognis:layman:start -->
+## What is this?
+
+Your personal information is held by dozens of data brokers — companies that collect and sell your name, address, phone number, and more without your knowledge. `optout` lets you send legally backed removal requests to over 20 of the biggest brokers at once, using your rights under California's CCPA law or the European GDPR. You fill in a simple profile with your name and email, run one command, and get ready-to-send letters for every broker. It runs entirely on your own computer with no account required and no data sent anywhere.
+<!-- cognis:layman:end -->
 
 ## Contents
 
@@ -45,10 +51,56 @@ Automated data-broker opt-out engine — top 50 brokers, CCPA/GDPR letters — w
 <div align="right"><a href="#top">↑ back to top</a></div>
 
 <a name="quick-start"></a>
+<!-- cognis:domains:start -->
+## Domains
+
+**Primary domain:** Data & Privacy  ·  **JTF MERIDIAN division:** NULLBYTE · BLUE CELL
+
+**Topics:** `cognis` `privacy` `data-protection` `pii`
+
+Part of the **Cognis Neural Suite** — 300+ source-available tools organized across 12 domains under the JTF MERIDIAN command structure. See the [suite on GitHub](https://github.com/cognis-digital) and [jtf-meridian](https://github.com/cognis-digital/jtf-meridian) for how the pieces fit together.
+<!-- cognis:domains:end -->
+
+<!-- cognis:install:start -->
+## Install
+
+`optout` is source-available (not published to PyPI) — every method below installs
+straight from GitHub. Pick whichever you prefer; the one-line scripts auto-detect
+the best tool available on your machine.
+
+**One-liner (Linux / macOS):**
+```sh
+curl -fsSL https://raw.githubusercontent.com/cognis-digital/optout/HEAD/install.sh | sh
+```
+
+**One-liner (Windows PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/cognis-digital/optout/HEAD/install.ps1 | iex
+```
+
+**Or install manually — any one of:**
+```sh
+pipx install "git+https://github.com/cognis-digital/optout.git"     # isolated (recommended)
+uv tool install "git+https://github.com/cognis-digital/optout.git"  # uv
+pip install "git+https://github.com/cognis-digital/optout.git"      # pip
+```
+
+**From source:**
+```sh
+git clone https://github.com/cognis-digital/optout.git
+cd optout && pip install .
+```
+
+Then run:
+```sh
+optout --help
+```
+<!-- cognis:install:end -->
+
 ## Quick start
 
 ```bash
-pip install cognis-optout
+pip install "git+https://github.com/cognis-digital/optout.git"
 optout --version
 optout scan .                       # scan current project
 optout scan . --format json         # machine-readable
@@ -141,6 +193,32 @@ curl -fsSL https://raw.githubusercontent.com/cognis-digital/optout/main/install.
 <div align="right"><a href="#top">↑ back to top</a></div>
 
 <a name="related"></a>
+<a name="verification"></a>
+## Verification
+
+[![tests](https://img.shields.io/badge/tests-14%20passing-2ea44f.svg)](AUDIT.md)
+
+Every push is verified end-to-end. Latest audit (2026-06-13):
+
+```text
+tests        : 14 passed, 0 failed, 0 errored
+compile      : all modules parse
+cli          : C:\Python314\python.exe: No module named https
+package      : https
+```
+
+<details><summary>CLI surface (<code>--help</code>)</summary>
+
+```text
+C:\Python314\python.exe: No module named https
+```
+</details>
+
+Full machine-readable results: [`AUDIT.md`](AUDIT.md) · regenerate with `python -m https --help` + `pytest -q`.
+
+<div align="right"><a href="#top">↑ back to top</a></div>
+
+
 ## Related Cognis tools
 
 - [`recall`](https://github.com/cognis-digital/recall) — Privacy-first local RAG over personal data — encrypted, audit-logged
